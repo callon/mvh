@@ -8,6 +8,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/materialize.min.css">
   <link rel="stylesheet" href=<?php bloginfo('stylesheet_url'); ?>>
 
   <!--[if lt IE 9]>
