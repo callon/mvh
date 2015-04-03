@@ -10,3 +10,28 @@ Version: 0.1
 * {
 	font-family: 'Raleway', sans-serif;
 }
+
+header {
+	min-height: 600px;
+	height: 100%;
+	width: 100%;
+
+	background-size: cover;
+	background-origin: 50% 50%;
+}
+
+nav {
+	background-color: rgba(255,255,255,0);
+	box-shadow: none;
+}
+
+main {
+
+}
+
+footer {
+	background-color: #E1E1E1;
+
+	width: 100%;
+	min-height: 150px;
+}

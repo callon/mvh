@@ -1,15 +1,10 @@
 <?php get_header(); ?>
 
-
-<?php /* start of the loop */
- if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<h1><?php the_title(); ?></h1>
-	<?php the_content(); ?>
-
-
-<?php endwhile; else : ?>
-	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; 
-/* End of the loop */ ?>
+<main class="container">
+	<section class="last_project_promo"></section>	
+	<section class="about_promo"></section>
+	<section class="earlier_projects_promo"></section>
+	<section class="actor_records_promo"></section>	
+</main>
 
 <?php get_footer(); ?>
