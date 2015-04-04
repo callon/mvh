@@ -7,6 +7,10 @@ Description: Theme for MVH and DKB
 Version: 0.1
 */
 
+
+/**********************************\
+			Main Styles
+\**********************************/
 * {
 	font-family: 'Raleway', sans-serif;
 }
@@ -30,8 +34,17 @@ main {
 }
 
 footer {
-	background-color: #E1E1E1;
-
 	width: 100%;
-	min-height: 150px;
+	min-height: 65px;
+}
+
+
+
+/**********************************\
+			Custom Styles
+\**********************************/
+hr.divider {
+	border: 0;
+	height: 2px;
+	background-color: #66bc98;
 }

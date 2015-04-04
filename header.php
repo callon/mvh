@@ -17,15 +17,15 @@
 </head>
 <body>
 <header>
-<!-- navbar placeholder - Work In Progress -->
-	<div class="navbar-fixed">
-		<nav>
-	    	<div class="nav-wrapper">
-	     		<a href="#" class="brand-logo right">Logo</a>
-	     		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-<!-- menu -->	<?php wp_nav_menu( array( 'container' => false, "menu_class" => "left side-nav" ) ); ?>
-			</div>
-		</nav>
-	</div>
+	<!-- navbar placeholder - Work In Progress -->
+		<div class="navbar-fixed">
+			<nav>
+		    	<div class="nav-wrapper">
+		     		<a href="<?php bloginfo('url'); ?>" class="brand-logo right">Logo</a>
+		     		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+	<!-- menu -->	<?php wp_nav_menu( array( 'container' => false, "menu_class" => "left side-nav" ) ); ?>
+				</div>
+			</nav>
+		</div>
 </header>
 
