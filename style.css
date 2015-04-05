@@ -11,8 +11,9 @@ Version: 0.1
 /**********************************\
 			Main Styles
 \**********************************/
-* {
+html {
 	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
 }
 
 header {
@@ -33,9 +34,21 @@ main {
 
 }
 
-footer {
-	width: 100%;
+footer.footer {
 	min-height: 65px;
+	margin-top: 100px;
+}
+
+
+/**********************************\
+		 Typography Styles
+\**********************************/
+h1, h2, h3, h4, h5 {
+	font-weight: 300;
+}
+
+div.headline {
+	margin-top: 45px;
 }
 
 
@@ -47,4 +60,35 @@ hr.divider {
 	border: 0;
 	height: 2px;
 	background-color: #66bc98;
+}
+
+
+/**********************************\
+			Header Styles
+\**********************************/
+/* The logo in the header */
+a.brand-logo {
+	right: 0;
+	margin-right: 100px;
+}
+
+div.left {
+	margin-left: 100px;
+}
+
+div.right {
+	margin-right: 100px;
+}
+
+
+/**********************************\
+			 Main Styles
+\**********************************/
+
+/**********************************\
+			Footer Styles
+\**********************************/
+footer.footer div.row {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
