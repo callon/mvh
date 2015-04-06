@@ -59,7 +59,7 @@ div.headline {
 hr.divider {
 	border: 0;
 	height: 2px;
-	background-color: #66bc98;
+	background-color: #639CA7;
 }
 
 
@@ -72,6 +72,11 @@ a.brand-logo {
 	margin-right: 100px;
 }
 
+svg path {
+	fill: #639CA7;
+}
+
+/* Navigation */
 div.left {
 	margin-left: 100px;
 }

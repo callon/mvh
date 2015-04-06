@@ -7,11 +7,6 @@
 		</div>
 	</footer>
 
-	<script>
-		/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/
-		$("header").height($(window).height());
-		$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
-		
-	</script>
+	<?php jq_scripts(); ?>
 </body>
 </html>
