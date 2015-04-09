@@ -20,7 +20,7 @@
 	<!-- navbar placeholder - Work In Progress -->
 		<nav>
 	    	<div class="nav-wrapper">
-<!-- logo -->	<a href="<?php bloginfo('url'); ?>" class="brand-logo right"><img class="svg navbar-logo" src="<?php bloginfo('template_url'); ?>/img_temp/black_logo.svg"></a>
+<!-- logo -->	<a href="<?php bloginfo('url'); ?>" class="brand-logo right"></a>
 	     		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 <!-- menu -->	<?php wp_nav_menu( array( 'container' => false, "menu_class" => "left side-nav" ) ); ?>
 			</div>
@@ -28,6 +28,5 @@
 </header>
 
 
-
-
-<!-- STICKY NAV: http://www.hongkiat.com/blog/css-sticky-position/ -->
+<!-- LOGO SNIPPET -->
+<!-- <img class="svg navbar-logo" src="<?php bloginfo('template_url'); ?>/img_temp/black_logo.svg"> -->

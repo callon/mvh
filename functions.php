@@ -16,56 +16,83 @@
 	function jq_scripts() {
  ?>
 	 <script>
-	 	function resize_logo() {
-				//Resizes the navbar-logo to fit inside the size of the nav
-				$("svg.navbar-logo").height($("nav").height());
-		}
 
-		function svg_inline() {
-		/*
-		 * Replace all SVG images with inline SVG
-		 */
-			jQuery('img.svg').each(function(){
-			    var $img = jQuery(this);
-			    var imgID = $img.attr('id');
-			    var imgClass = $img.attr('class');
-			    var imgURL = $img.attr('src');
+// DOC READY //
+		$(document).ready(function() {
 
-			    jQuery.get(imgURL, function(data) {
-			        // Get the SVG tag, ignore the rest
-			        var $svg = jQuery(data).find('svg');
-
-			        // Add replaced image's ID to the new SVG
-			        if(typeof imgID !== 'undefined') {
-			            $svg = $svg.attr('id', imgID);
-			        }
-			        // Add replaced image's classes to the new SVG
-			        if(typeof imgClass !== 'undefined') {
-			            $svg = $svg.attr('class', imgClass+' replaced-svg');
-			        }
-
-			        // Remove any invalid XML tags as per http://validator.w3.org
-			        $svg = $svg.removeAttr('xmlns:a');
-
-			        // Replace image with new SVG
-			        $img.replaceWith($svg);
-
-			    }, 'xml');
+//--------------------- STICKY NAVIGATION SCRIPT ---------------------//
+			var stickyNavTop = $('nav').offset().top;
+			 
+			var stickyNav = function(){
+				var scrollTop = $(window).scrollTop();
+				      
+				if (scrollTop > stickyNavTop) { 
+				    $('nav').addClass('sticky-nav');
+				} else {
+				    $('nav').removeClass('sticky-nav'); 
+				}
+			};
+			 
+			stickyNav();
+			 
+			$(window).scroll(function() {
+			    stickyNav();
 			});
-		}
+		
+//--------------------- SVG INLINE SCRIPT ---------------------//
+			function svg_inline() {
+			/*
+			 * Replace all SVG images with inline SVG
+			 */
+				jQuery('img.svg').each(function(){
+				    var $img = jQuery(this);
+				    var imgID = $img.attr('id');
+				    var imgClass = $img.attr('class');
+				    var imgURL = $img.attr('src');
 
+				    jQuery.get(imgURL, function(data) {
+				        // Get the SVG tag, ignore the rest
+				        var $svg = jQuery(data).find('svg');
 
-	 	$( document ).ready(function() {
+				        // Add replaced image's ID to the new SVG
+				        if(typeof imgID !== 'undefined') {
+				            $svg = $svg.attr('id', imgID);
+				        }
+				        // Add replaced image's classes to the new SVG
+				        if(typeof imgClass !== 'undefined') {
+				            $svg = $svg.attr('class', imgClass+' replaced-svg');
+				        }
+
+				        // Remove any invalid XML tags as per http://validator.w3.org
+				        $svg = $svg.removeAttr('xmlns:a');
+
+				        // Replace image with new SVG
+				        $img.replaceWith($svg);
+
+				    }, 'xml');
+				});
+			}
+			//svg_inline();
+	 	
+//--------------------- RESIZE LOGO SCRIPT ---------------------//
+			//Resizes the navbar-logo to fit inside the size of the nav
+			$("a.brand-logo").width($("nav").height());
+
 	  
+//--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/
 			$("header").height($(window).height());
 			$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
 
-			svg_inline();
-			resize_logo();
-			
-			
+// END OF DOC READY //
 		});	
+
+// RESIZE SCRIPTS //
+		$( window ).resize(function() {
+			//--------------------- RESIZE LOGO SCRIPT ---------------------//
+			//Resizes the navbar-logo to fit inside the size of the nav
+			$("a.brand-logo").width($("nav").height());
+		});
 		
 	</script>
 <?php }; ?>

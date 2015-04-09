@@ -28,6 +28,10 @@ header {
 nav {
 	background-color: rgba(255,255,255,0);
 	box-shadow: none;
+	
+	height: 150px;
+	top: 70%;
+	position: absolute;
 }
 
 main {
@@ -70,6 +74,12 @@ hr.divider {
 a.brand-logo {
 	right: 0;
 	margin-right: 100px;
+	display: inline-block;
+	width: px;
+	height: 100%;
+
+	background-image: url(img_temp/black_logo.svg);
+	background-size: cover;
 }
 
 svg path {
@@ -77,6 +87,15 @@ svg path {
 }
 
 /* Navigation */
+.sticky-nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+}
+
 div.left {
 	margin-left: 100px;
 }

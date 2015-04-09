@@ -2,7 +2,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 	<main class="container">
-		<article class="row">
+		<article id="content" class="row">
 			<div class="headline col s12"><h1><?php the_title(); ?></h1></div>
 			<div class="text-content col s12 m7"><?php the_content(); ?></div>
 <!--Custom-->	<div class="text-techs right-align col s12 m4 offset-m1">
