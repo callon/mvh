@@ -27,3 +27,7 @@
 		</nav>
 </header>
 
+
+
+
+<!-- STICKY NAV: http://www.hongkiat.com/blog/css-sticky-position/ -->
