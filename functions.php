@@ -1,6 +1,11 @@
 <?php
 	add_theme_support( 'post-thumbnails' ); 
 
+	// 404 function to link to the 404.php file later.
+	function post_404(){
+		echo "<h1>Oops, something went wrong and it wasn't even your fault!</h1>";
+	}
+
 
 	// Snippet for setting the permalinks to always be structured through the formula: www.example.com/postname/
 	function reset_permalinks() {
@@ -8,7 +13,47 @@
 	    $wp_rewrite->set_permalink_structure( '/%postname%/' );
 	}
 	add_action( 'init', 'reset_permalinks' );
+
+
+	function get_post_from_tag($tag) {
+		// The Query
+		$results = new WP_Query('tag='.$tag);
+
+		// The Loop
+		if ( $results->have_posts() ) {
+			while ( $results->have_posts() ) {
+				$results->the_post();
+				echo "<article>";
+					if ( has_post_thumbnail() ) { 
+						the_post_thumbnail("full", array( 'class' => 'responsive-img' ));
+					} 
+					echo '<h1>' . get_the_title() . '</h1>';
+					the_excerpt();
+				echo "</article>";
+			}
+		} else {
+			post_404();
+		}
+	}
+
+
+
+	
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <?php 

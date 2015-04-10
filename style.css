@@ -33,13 +33,13 @@ nav {
 	position: absolute;
 }
 
-main {
-
+main.container {
+	margin-top: 70px;
 }
 
 footer.footer {
 	min-height: 65px;
-	margin-top: 300px;
+	margin-top: 140px;
 }
 
 
@@ -80,6 +80,8 @@ hr.divider {
 
 	height: 200px;
 	width: 200px;
+
+	z-index: 100;
 }
 
 .navbar-logo {
