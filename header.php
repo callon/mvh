@@ -17,16 +17,13 @@
 </head>
 <body>
 <header>
+	<a href="<?php bloginfo('url'); ?>" class="brand-logo right"><img class="svg navbar-logo" src="<?php bloginfo('template_url'); ?>/img_temp/black_logo.svg"></a>
 	<!-- navbar placeholder - Work In Progress -->
-		<nav>
-	    	<div class="nav-wrapper">
-<!-- logo -->	<a href="<?php bloginfo('url'); ?>" class="brand-logo right"></a>
-	     		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+	<nav class="header-nav">
+    	<div class="nav-wrapper">
+     		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 <!-- menu -->	<?php wp_nav_menu( array( 'container' => false, "menu_class" => "left side-nav" ) ); ?>
-			</div>
-		</nav>
+		</div>
+	</nav>
 </header>
 
-
-<!-- LOGO SNIPPET -->
-<!-- <img class="svg navbar-logo" src="<?php bloginfo('template_url'); ?>/img_temp/black_logo.svg"> -->

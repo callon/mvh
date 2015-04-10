@@ -28,17 +28,14 @@
 				      
 				if (scrollTop > stickyNavTop) { 
 				    $('nav').addClass('sticky-nav');
+				    $('nav').removeClass('header-nav'); 
 				} else {
-				    $('nav').removeClass('sticky-nav'); 
+				    $('nav').removeClass('sticky-nav');
+				    $('nav').addClass('header-nav');
 				}
 			};
-			 
 			stickyNav();
-			 
-			$(window).scroll(function() {
-			    stickyNav();
-			});
-		
+
 //--------------------- SVG INLINE SCRIPT ---------------------//
 			function svg_inline() {
 			/*
@@ -63,6 +60,10 @@
 				            $svg = $svg.attr('class', imgClass+' replaced-svg');
 				        }
 
+				        // set the width and height of the image
+				        var x = $("nav").height();
+				        $svg = $svg.attr('width', x).attr('height', x);
+
 				        // Remove any invalid XML tags as per http://validator.w3.org
 				        $svg = $svg.removeAttr('xmlns:a');
 
@@ -72,27 +73,38 @@
 				    }, 'xml');
 				});
 			}
-			//svg_inline();
-	 	
-//--------------------- RESIZE LOGO SCRIPT ---------------------//
-			//Resizes the navbar-logo to fit inside the size of the nav
-			$("a.brand-logo").width($("nav").height());
+			svg_inline();
 
+
+			//--------------------- RESIZE LOGO SCRIPT ---------------------//
+			//Resizes the navbar-logo to fit inside the size of the nav
+			function resize_logo() {
+				var x = $("nav").height();
+				$("svg.navbar-logo").width(x).height(x);
+			}
+			resize_logo();
 	  
 //--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/
 			$("header").height($(window).height());
 			$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
 
+
+			// RESIZE SCRIPTS //
+			$( window ).resize(function() {
+				resize_logo();
+			});
+
+			// RESIZE SCRIPTS //
+			$(window).scroll(function() {
+			    stickyNav();
+			    resize_logo();
+			});
+
 // END OF DOC READY //
 		});	
 
-// RESIZE SCRIPTS //
-		$( window ).resize(function() {
-			//--------------------- RESIZE LOGO SCRIPT ---------------------//
-			//Resizes the navbar-logo to fit inside the size of the nav
-			$("a.brand-logo").width($("nav").height());
-		});
+
 		
 	</script>
 <?php }; ?>

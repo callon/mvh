@@ -26,11 +26,10 @@ header {
 }
 
 nav {
-	background-color: rgba(255,255,255,0);
+	background-color: rgba(255, 255, 255, 0);
 	box-shadow: none;
-	
-	height: 150px;
-	top: 70%;
+
+	bottom: 10%;
 	position: absolute;
 }
 
@@ -40,7 +39,7 @@ main {
 
 footer.footer {
 	min-height: 65px;
-	margin-top: 100px;
+	margin-top: 300px;
 }
 
 
@@ -72,14 +71,7 @@ hr.divider {
 \**********************************/
 /* The logo in the header */
 a.brand-logo {
-	right: 0;
-	margin-right: 100px;
-	display: inline-block;
-	width: px;
-	height: 100%;
-
-	background-image: url(img_temp/black_logo.svg);
-	background-size: cover;
+	margin-right: 50px;
 }
 
 svg path {
@@ -87,13 +79,29 @@ svg path {
 }
 
 /* Navigation */
+.header-nav {
+    -webkit-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
 .sticky-nav {
+	border-bottom: solid 2px #639CA7;
+	background-color: rgba(255, 255, 255, 1);
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
     z-index: 100;
     border-top: 0;
+
+    -webkit-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.sticky-nav li a {
+	color: #000000;
 }
 
 div.left {
