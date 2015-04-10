@@ -54,6 +54,9 @@ div.headline {
 	margin-top: 45px;
 }
 
+a {
+	color: #639CA7;
+}
 
 
 /**********************************\
@@ -87,11 +90,17 @@ svg path {
 	fill: #639CA7;
 }
 
+.link-logo {
+	display: inline-block;
+	line-height: 0;
+}
+
 /* Navigation */
 .header-nav {
-    -webkit-transition: background-color 0.3s;
-    -o-transition: background-color 0.3s;
-    transition: background-color 0.3s;
+	/* Transitions for the navbar when scrolling to the top */
+    -webkit-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+    transition: background-color 0.2s;
 }
 
 .sticky-nav {
@@ -104,15 +113,23 @@ svg path {
     z-index: 100;
     border-top: 0;
 
+	/* Transitions for the navbar when scrolling down */
     -webkit-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
 
 /* THE HOVER AND ACTIVE COLORS */
-nav ul li:hover, nav ul li.active {
+nav ul li:hover, nav ul li.active, .current_page_item a {
 	background-color: transparent;
+}
+
+nav li a:hover, nav li a:active, .current_page_item a {
 	color: #639CA7;
+	/* Transitions for the navbar when scrolling down */
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
 }
 
 .sticky-nav li a {
@@ -131,6 +148,7 @@ div.right {
 /**********************************\
 			 Main Styles
 \**********************************/
+
 
 /**********************************\
 			Footer Styles
