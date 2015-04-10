@@ -70,8 +70,17 @@ hr.divider {
 			Header Styles
 \**********************************/
 /* The logo in the header */
-a.brand-logo {
-	margin-right: 50px;
+.header-logo {
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+
+	height: 200px;
+	width: 200px;
+}
+
+.navbar-logo {
+	margin-top: 2px;
 }
 
 svg path {
@@ -98,6 +107,12 @@ svg path {
     -webkit-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
     transition: background-color 0.3s;
+}
+
+/* THE HOVER AND ACTIVE COLORS */
+nav ul li:hover, nav ul li.active {
+	background-color: transparent;
+	color: #639CA7;
 }
 
 .sticky-nav li a {

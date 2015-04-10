@@ -17,12 +17,15 @@
 </head>
 <body>
 <header>
-	<a href="<?php bloginfo('url'); ?>" class="brand-logo right"><img class="svg navbar-logo" src="<?php bloginfo('template_url'); ?>/img_temp/black_logo.svg"></a>
+	<div class="header-logo">
+		<a href="<?php bloginfo('url'); ?>" class="link-logo"><img class="svg logo" src="<?php bloginfo('template_url'); ?>/img_temp/black_logo.svg"></a>
+	</div>
 	<!-- navbar placeholder - Work In Progress -->
 	<nav class="header-nav">
     	<div class="nav-wrapper">
      		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 <!-- menu -->	<?php wp_nav_menu( array( 'container' => false, "menu_class" => "left side-nav" ) ); ?>
+			<div class="navbar-logo right"></div>
 		</div>
 	</nav>
 </header>

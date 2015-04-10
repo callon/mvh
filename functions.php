@@ -20,6 +20,22 @@
 // DOC READY //
 		$(document).ready(function() {
 
+			//--------------------- RESIZE LOGO SCRIPT ---------------------//
+			//Resizes the navbar-logo to fit inside the size of the nav
+			var resize_logo = function(size) {
+				if(size === "big") {
+					var x = $("div.header-logo").height();
+					$("svg.logo").width(x).height(x);
+
+				} else if(size === "small") {
+					var x = $("nav").height();
+					$("svg.logo").width(x-4).height(x-4);
+
+				} else {
+					console.log("resize_logo: None");
+				}
+			}
+
 //--------------------- STICKY NAVIGATION SCRIPT ---------------------//
 			var stickyNavTop = $('nav').offset().top;
 			 
@@ -29,15 +45,21 @@
 				if (scrollTop > stickyNavTop) { 
 				    $('nav').addClass('sticky-nav');
 				    $('nav').removeClass('header-nav'); 
+				
+				    $(".link-logo").appendTo("div.navbar-logo");
+				    resize_logo("small");
 				} else {
 				    $('nav').removeClass('sticky-nav');
 				    $('nav').addClass('header-nav');
+
+				    $(".link-logo").appendTo("div.header-logo");
+				    resize_logo("big");
 				}
 			};
 			stickyNav();
 
 //--------------------- SVG INLINE SCRIPT ---------------------//
-			function svg_inline() {
+			var svg_inline = function() {
 			/*
 			 * Replace all SVG images with inline SVG
 			 */
@@ -60,8 +82,8 @@
 				            $svg = $svg.attr('class', imgClass+' replaced-svg');
 				        }
 
-				        // set the width and height of the image
-				        var x = $("nav").height();
+				        // set the width and height of the img
+				        var x = $("div.header-logo").height();
 				        $svg = $svg.attr('width', x).attr('height', x);
 
 				        // Remove any invalid XML tags as per http://validator.w3.org
@@ -76,13 +98,7 @@
 			svg_inline();
 
 
-			//--------------------- RESIZE LOGO SCRIPT ---------------------//
-			//Resizes the navbar-logo to fit inside the size of the nav
-			function resize_logo() {
-				var x = $("nav").height();
-				$("svg.navbar-logo").width(x).height(x);
-			}
-			resize_logo();
+			
 	  
 //--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/
@@ -92,13 +108,11 @@
 
 			// RESIZE SCRIPTS //
 			$( window ).resize(function() {
-				resize_logo();
 			});
 
 			// RESIZE SCRIPTS //
 			$(window).scroll(function() {
 			    stickyNav();
-			    resize_logo();
 			});
 
 // END OF DOC READY //
