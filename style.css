@@ -33,6 +33,10 @@ nav {
 	position: absolute;
 }
 
+section {
+	margin-bottom: 75px;
+}
+
 main.container {
 	margin-top: 70px;
 }
@@ -148,8 +152,21 @@ div.right {
 
 
 /**********************************\
-			 Main Styles
+			 Index Styles
 \**********************************/
+.last-project-promo {
+
+}
+
+.excerpt {
+	position: relative;
+}
+
+.readmore-link {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
 
 
 /**********************************\
@@ -159,3 +176,9 @@ footer.footer div.row {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+
+
+/**********************************\
+			HELPERS
+\**********************************/
