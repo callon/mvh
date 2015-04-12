@@ -17,7 +17,7 @@
 
 	function get_post_from_tag($tag) {
 		// The Query
-		$results = new WP_Query('tag='.$tag);
+		$results = new WP_Query(array('posts_per_page'=>1, 'tag' => $tag));
 
 		// The Loop
 		if ( $results->have_posts() ) {
