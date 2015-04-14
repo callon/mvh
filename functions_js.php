@@ -18,6 +18,10 @@
 					var x = $("nav").height();
 					$("svg.logo").width(x-4).height(x-4);
 
+				} else if (size === "init") {
+					var x = $("div.header-logo").height();
+					$("svg.logo").attr('width', x).attr('height', x);
+					console.log("Init logo header0");
 				} else {
 					console.log("resize_logo: None");
 				}
@@ -70,8 +74,9 @@
 				        }
 
 				        // set the width and height of the img
-				        var x = $("div.header-logo").height();
-				        $svg = $svg.attr('width', x).attr('height', x);
+		//		        var x = $("div.header-logo").height();
+		//		        $svg = $svg.attr('width', x).attr('height', x);
+						resize_logo('init');
 
 				        // Remove any invalid XML tags as per http://validator.w3.org
 				        $svg = $svg.removeAttr('xmlns:a');

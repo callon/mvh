@@ -14,6 +14,14 @@
 	    $wp_rewrite->set_permalink_structure( '/%postname%/' );
 	}
 
+	// allow svg upload in wordpress
+	function custom_mtypes( $m ){
+	    $m['svg'] = 'image/svg+xml';
+	    $m['svgz'] = 'image/svg+xml';
+	    return $m;
+	}
+	add_filter( 'upload_mimes', 'custom_mtypes' );
+
 	include 'functions_custom_wp.php';
 	include 'functions_gets.php';
 	include 'functions_js.php';

@@ -1,7 +1,11 @@
 <?php
 
 function get_last_post_type($type){
-	$args = array( 'post_type' => $type, 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
+	if($type === "mvh") {
+		$args = array( 'post_type' =>   array( 'mvh', 'dkb' ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
+	} else {
+		$args = array( 'post_type' => $type, 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
+	}
 	$results = new WP_Query( $args );
 	return $results;
 }
@@ -23,10 +27,17 @@ function get_segment_project($get_function, $type){
 	endwhile;
 }
 
-function get_this_project($type){
-	
+function get_segment($tag) {
+	$args = array( 'post_type' => 'segment', 'tag' => $tag );
+	$result = new WP_Query( $args );
+	return $result;
 }
 
+
+
+
+
+// Maybe deprecated
 function get_post_from_tag($tag) {
 		// The Query
 		$results = new WP_Query(array('posts_per_page'=>3, 'tag' => $tag));
