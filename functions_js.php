@@ -24,8 +24,10 @@
 					var stickyNavTop = $("nav").offset().top;
 					if (scrollTop > stickyNavTop) { 
 						resize_logo("small");
+						console.log("SMALL LOGO");
 					} else { 
 						resize_logo("big");
+						console.log("BIG LOGO");
 					}
 				} else {
 					console.log("resize_logo: None");
@@ -104,7 +106,7 @@
 			svg_inline();
 
 
-			
+				
 	  
 //--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/

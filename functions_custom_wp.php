@@ -68,24 +68,24 @@
 		register_post_type('dkb',$dkb_args);
 
 
-		//-----------------------Custom Post Type PROMOS DKB / MVH / GENERAL-----------------------//
-		$segment_labels = array(
-			'name' => _x('Segments', 'post type general name'),
-			'singular_name' => _x('Segment', 'post type singular name'),
-			'add_new' => _x('Add New', 'segments'),
-			'add_new_item' => __('Add new segment'),
-			'edit_item' => __('Edit segment'),
-			'new_item' => __('New segment'),
-			'all_items' => __('All segments'),
-			'view_item' => __('View segment'),
-			'search_items' => __('Search segments'),
-			'not_found' =>  __('No segments found'),
-			'not_found_in_trash' => __('No segments found in Trash'), 
+		//-----------------------Custom Post Type Front Page Segments / General Appearance -----------------------//
+		$look_labels = array(
+			'name' => _x('Look / Frontpage', 'post type general name'),
+			'singular_name' => _x('Look / Frontpage', 'post type singular name'),
+			'add_new' => _x('Add New', 'look'),
+			'add_new_item' => __('Add new look / frontpage'),
+			'edit_item' => __('Edit look / frontpage'),
+			'new_item' => __('New look / frontpage'),
+			'all_items' => __('Look / Frontpage'),
+			'view_item' => __('View look / frontpage'),
+			'search_items' => __('Search look / frontpage'),
+			'not_found' =>  __('No look / frontpage found'),
+			'not_found_in_trash' => __('No look / frontpage found in Trash'), 
 			'parent_item_colon' => '',
-			'menu_name' => __('Segments')
+			'menu_name' => __('Look / Frontpage')
 		);
-		$segment_args = array(
-			'labels' => $segment_labels,
+		$look_args = array(
+			'labels' => $look_labels,
 			'public' => true,
 			'publicly_queryable' => true,
 			'show_ui' => true, 
@@ -97,9 +97,9 @@
 			'hierarchical' => false,
 			'menu_position' => null,
 			'taxonomies' => array('post_tag'), 
-			'supports' => array( 'title', 'editor', 'thumbnail' )
+			'supports' => array( 'editor' )
 		); 
-		register_post_type('segment',$segment_args);
+		register_post_type('look', $look_args);		
 
 	}
 	

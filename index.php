@@ -5,7 +5,7 @@
 		get_segment_project("get_last_post_type", "mvh");
 	 ?>
 	</section>	
-	<hr class="divider">
+	<hr class="mvh-background-color divider">
 	<section class="about-promo">
 	<?php
 		$result = get_segment("mvh_segment2");
@@ -23,10 +23,10 @@
 		endwhile;
 	?>
 	</section>
-	<hr class="divider">
+	<hr class="mvh-background-color divider">
 	<section class="earlier-projects-promo">EARLIER PROJECTS PROMO (3 BOXES)</section>
-	<hr class="divider">
-	<section class="actor-records-promo">KARTOTEK PROMO</section>	
+	<hr class="mvh-background-color divider">
+	<section class="actor-records-promo">KARTOTEK PROMO</section>
 </main>
 
 <?php get_footer(); ?>

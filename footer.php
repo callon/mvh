@@ -1,5 +1,5 @@
 	<footer class="footer container">
-		<hr class="divider">
+		<hr class="mvh-background-color divider">
 		<div class="row">
 			<div class="footer-logos col s12 m4 center-align">Logos</div>
 			<div class="footer-support col s12 m4 center-align">Support</div>
