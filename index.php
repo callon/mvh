@@ -17,7 +17,7 @@
 		the_content();
 		echo "</div><div class='valign col m5 s12'><a href='#'>";
 		if ( has_post_thumbnail() ) { 
-			the_post_thumbnail(array("class" => "logo responsive-img"));
+			the_post_thumbnail(array("class" => " svg responsive-img"));
 		} 
 		echo "</a></div>";
 		endwhile;

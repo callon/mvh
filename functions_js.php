@@ -13,18 +13,24 @@
 				if(size === "big") {
 					var x = $("div.header-logo").height();
 					$("svg.logo").width(x).height(x);
+					
 
 				} else if(size === "small") {
 					var x = $("nav").height();
 					$("svg.logo").width(x-4).height(x-4);
-
+					
 				} else if (size === "init") {
-					var x = $("div.header-logo").height();
-					$("svg.logo").attr('width', x).attr('height', x);
-					console.log("Init logo header0");
+					var scrollTop = $(window).scrollTop();
+					var stickyNavTop = $("nav").offset().top;
+					if (scrollTop > stickyNavTop) { 
+						resize_logo("small");
+					} else { 
+						resize_logo("big");
+					}
 				} else {
 					console.log("resize_logo: None");
 				}
+		
 			}
 
 //--------------------- STICKY NAVIGATION SCRIPT ---------------------//
@@ -34,18 +40,26 @@
 				var scrollTop = $(window).scrollTop();
 				      
 				if (scrollTop > stickyNavTop) { 
-				    $('nav').addClass('sticky-nav');
-				    $('nav').removeClass('header-nav'); 
-				
-				    $(".link-logo").appendTo("div.navbar-logo");
-				    resize_logo("small");
+					if($("nav").hasClass( "header-nav" )) {
+					    $('nav').addClass('sticky-nav');
+					    $('nav').removeClass('header-nav'); 
+						
+					    $(".link-logo").appendTo("div.navbar-logo");
+					    resize_logo("small");
+					    console.log("ACTION IN BOTTOM SITE");
+					}
 				} else {
-				    $('nav').removeClass('sticky-nav');
-				    $('nav').addClass('header-nav');
+					if($("nav").hasClass( "sticky-nav" )) {
+						
+					    $('nav').removeClass('sticky-nav');
+					    $('nav').addClass('header-nav');
 
-				    $(".link-logo").appendTo("div.header-logo");
-				    resize_logo("big");
+					    $(".link-logo").appendTo("div.header-logo");
+					    resize_logo("big");
+					    console.log("ACTION AT TOP OF SITE");
+					}
 				}
+		
 			};
 			stickyNav();
 
@@ -73,19 +87,19 @@
 				            $svg = $svg.attr('class', imgClass+' replaced-svg');
 				        }
 
-				        // set the width and height of the img
-		//		        var x = $("div.header-logo").height();
-		//		        $svg = $svg.attr('width', x).attr('height', x);
-						resize_logo('init');
-
 				        // Remove any invalid XML tags as per http://validator.w3.org
 				        $svg = $svg.removeAttr('xmlns:a');
 
 				        // Replace image with new SVG
 				        $img.replaceWith($svg);
 
+				        // SET THE WIDTH AND HEIGHT OF THE SVG
+				        resize_logo("init"); // THIS IS WHERE WE ENSURE THAT THE SVG IS REAL SIZE WHEN DOC READY
+				      	
 				    }, 'xml');
+				  
 				});
+		
 			}
 			svg_inline();
 
@@ -98,15 +112,18 @@
 			$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
 
 
+
 			// RESIZE SCRIPTS //
 			$( window ).resize(function() {
 			});
 
 			// RESIZE SCRIPTS //
 			$(window).scroll(function() {
-			    stickyNav();
+				stickyNav();
 			});
 
+
+	
 // END OF DOC READY //
 		});	
 

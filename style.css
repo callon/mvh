@@ -109,15 +109,16 @@ svg path {
 /* Navigation */
 .header-nav {
 	/* Transitions for the navbar when scrolling to the top */
-    -webkit-transition: background-color 0.2s;
+/*    -webkit-transition: background-color 0.2s;
     -o-transition: background-color 0.2s;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s;		*/
 }
 
 .sticky-nav {
 	border-bottom: solid 2px #639CA7;
 	background-color: rgba(255, 255, 255, 1);
     position: fixed;
+    backface-visibility: hidden;
     width: 100%;
     left: 0;
     top: 0;
@@ -125,27 +126,27 @@ svg path {
     border-top: 0;
 
 	/* Transitions for the navbar when scrolling down */
-    -webkit-transition: background-color 0.3s;
+/*    -webkit-transition: background-color 0.3s;
     -o-transition: background-color 0.3s;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s;	*/
 }
 
 
-.sticky-nav li {
+.sticky-nav li a {
 	color: #000000;
 }
 
 /* THE HOVER AND ACTIVE COLORS */
-nav ul li:hover, nav ul li.active, .current_page_item a {
+nav ul li:hover, nav ul li.active, li.current_page_item a {
 	background-color: transparent;
 }
 
-nav li a:hover, nav li a:active, .current_page_item a {
+nav li a:hover, nav li a:active, li.current_page_item a {
 	color: #639CA7;
 	/* Transitions for the navbar when scrolling down */
-    -webkit-transition: color 0.2s;
+/*  -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
-    transition: color 0.2s;
+    transition: color 0.2s;	*/
 }
 
 div.left {
