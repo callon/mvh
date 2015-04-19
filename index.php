@@ -26,7 +26,22 @@
 	<hr class="mvh-background-color divider">
 	<section class="earlier-projects-promo">EARLIER PROJECTS PROMO (3 BOXES)</section>
 	<hr class="mvh-background-color divider">
-	<section class="actor-records-promo">KARTOTEK PROMO</section>
+	<section class="actor-records-promo row">
+	<?php
+		$result = get_segment("mvh_segment4");
+		while ( $result->have_posts() ) : $result->the_post();
+		echo "<h3 class='center-align'>";
+		the_title();
+		echo "</h3>";
+		echo "<div class='center-align col s6 offset-s3'>";
+		the_content();
+		echo "</div>";
+		endwhile;
+
+		// JUST A TEST OF CARD DESIGN
+		the_card();
+	?>
+	</section>
 </main>
 
 <?php get_footer(); ?>

@@ -39,7 +39,6 @@ section {
 }
 
 main.container {
-	margin-top: 70px;
 }
 
 main:before {
@@ -184,8 +183,30 @@ footer.footer div.row {
 	margin-bottom: 20px;
 }
 
+/**********************************\
+		Card Inded Styles
+\**********************************/
+.headshot {
+	border: solid 1px #E0E0E0;
+}
+
+.business-card {
+	margin-top: 35px;
+}
+
+.card-info {
+	margin: 0;
+}
+
 
 
 /**********************************\
 			HELPERS
 \**********************************/
+.no-line-height {
+	line-height: 0;
+}
+
+.border-helper {
+	border: solid 1px #E0E0E0;
+}

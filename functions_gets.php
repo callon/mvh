@@ -33,32 +33,50 @@ function get_segment($tag) {
 	return $result;
 }
 
+function the_facts() {
+	echo "<h5>"; 
+	the_field("facts_headline");
+	echo "</h5>";
+	the_field("facts");
+}
 
 
 
+function the_card() {
+	$args = array('post_type' => 'card', 'posts_per_page' => 1);
+	$card = new WP_Query( $args );
 
-// Maybe deprecated
-function get_post_from_tag($tag) {
-		// The Query
-		$results = new WP_Query(array('posts_per_page'=>3, 'tag' => $tag));
-		
 
-		// The Loop
-		if ( $results->have_posts() ) {
-			while ( $results->have_posts() ) {
-				$results->the_post();
-				echo "<article>";
-					if ( has_post_thumbnail() ) { 
-						the_post_thumbnail("full", array( 'class' => 'responsive-img' ));
-					} 
-					echo '<h1>' . get_the_title() . '</h1>';
-					the_excerpt();
-				echo "</article>";
-			}
-		} else {
-			post_404();
-		}
-	}
+	
+
+	while ( $card->have_posts() ) : $card->the_post();
+		$name = get_field("card_name");
+		$job = get_field("job");
+		$contact = get_field("contact");
+		$projects = get_field("projects");
+
+		$headshot_img = get_field("headshot_image");
+		$img_arr = wp_get_attachment_image_src( $headshot_img, 'headshot' );
+
+		echo "<div class='row'>";
+			echo "<div class='business-card col s6 offset-s3 valign-wrapper'>";
+				echo "<div class='no-line-height col s4'><img class='circle headshot responsive-img' src=".$img_arr[0]."></div>";
+				echo "<div class='card-info valign row col s8'>";
+					echo "<div class='col s12'>".$name."</div>";
+					echo "<div class='col s12'>".$job."</div>";
+					echo "<div class='col s12'>".$contact."</div>";
+					echo "<div class='dkb-text-color col s12'>Det Kolde Bord #".$projects."</div>";
+		echo "</div></div></div>";
+	endwhile;
+}
+
+function get_all_cards() {
+
+}
+
+function get_card_from() {
+
+}
 
 
 ?>

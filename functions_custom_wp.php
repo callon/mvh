@@ -99,7 +99,72 @@
 			'taxonomies' => array('post_tag'), 
 			'supports' => array( 'editor' )
 		); 
-		register_post_type('look', $look_args);		
+		register_post_type('look', $look_args);	
+
+
+//-----------------------Custom Post Type PROMOS DKB / MVH / GENERAL-----------------------//
+		$segment_labels = array(
+			'name' => _x('Segments', 'post type general name'),
+			'singular_name' => _x('Segment', 'post type singular name'),
+			'add_new' => _x('Add New', 'segments'),
+			'add_new_item' => __('Add new segment'),
+			'edit_item' => __('Edit segment'),
+			'new_item' => __('New segment'),
+			'all_items' => __('All segments'),
+			'view_item' => __('View segment'),
+			'search_items' => __('Search segments'),
+			'not_found' =>  __('No segments found'),
+			'not_found_in_trash' => __('No segments found in Trash'), 
+			'parent_item_colon' => '',
+			'menu_name' => __('Segments')
+		);
+		$segment_args = array(
+			'labels' => $segment_labels,
+			'public' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true, 
+			'show_in_menu' => true, 
+			'query_var' => true,
+			'rewrite' => true,
+			'capability_type' => 'post',
+			'has_archive' => true, 
+			'hierarchical' => false,
+			'menu_position' => null,
+			'taxonomies' => array('post_tag'), 
+			'supports' => array( 'title', 'editor', 'thumbnail' )
+		); 
+		register_post_type('segment',$segment_args);
+
+
+		$card_index_labels = array(
+			'name' => _x('Card Index', 'post type general name'),
+			'singular_name' => _x('card', 'post type singular name'),
+			'add_new' => _x('Add New', 'card_index'),
+			'add_new_item' => __('Add New Card'),
+			'edit_item' => __('Edit card'),
+			'new_item' => __('New card'),
+			'all_items' => __('All cards'),
+			'view_item' => __('View cards'),
+			'search_items' => __('Search cards'),
+			'not_found' =>  __('No cards found'),
+			'not_found_in_trash' => __('No cards found in Trash'), 
+			'parent_item_colon' => '',
+			'menu_name' => __('Card Index')
+		);
+		$card_index_args = array(
+			'labels' => $card_index_labels,
+			'public' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true, 
+			'show_in_menu' => true, 
+			'query_var' => true,
+			'rewrite' => true,
+			'capability_type' => 'post',
+			'has_archive' => true, 
+			'hierarchical' => false,
+			'menu_position' => null,
+		); 
+		register_post_type('card', $card_index_args);
 
 	}
 	

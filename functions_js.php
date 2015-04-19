@@ -20,6 +20,7 @@
 					$("svg.logo").width(x-4).height(x-4);
 					
 				} else if (size === "init") {
+					console.log("init");
 					var scrollTop = $(window).scrollTop();
 					var stickyNavTop = $("nav").offset().top;
 					if (scrollTop > stickyNavTop) { 
@@ -48,7 +49,7 @@
 						
 					    $(".link-logo").appendTo("div.navbar-logo");
 					    resize_logo("small");
-					    console.log("ACTION IN BOTTOM SITE");
+					    console.log("sticky nav small logo");
 					}
 				} else {
 					if($("nav").hasClass( "sticky-nav" )) {
@@ -58,7 +59,7 @@
 
 					    $(".link-logo").appendTo("div.header-logo");
 					    resize_logo("big");
-					    console.log("ACTION AT TOP OF SITE");
+					    console.log("sticky nav top of site");
 					}
 				}
 		
