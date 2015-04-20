@@ -24,7 +24,26 @@
 	?>
 	</section>
 	<hr class="mvh-background-color divider">
-	<section class="earlier-projects-promo">EARLIER PROJECTS PROMO (3 BOXES)</section>
+	<section class="earlier-projects-promo">
+		<h4>Tidligere projekter</h4>
+<?php
+	// FÅ FASTSAT OG HENTET RESTEN I PHP - BRUG VARIABLER TIL AT GIVE SHIT FRA FØRSTE QUERY VIDERE TIL TITLERNE!
+ ?>
+		<div class="row">
+			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php 
+				$result = get_last_post_type("mvh");
+				the_project_img_url($result);?>);"></div>
+			</div>
+			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php 
+				$result = get_last_post_type("dkb");
+				the_project_img_url($result);?>);"></div></div>
+			<div class="promobox promo"><div class="promo-content border-helper">TEKST TESTKSKST</div></div>
+		</div>
+		<div class="row">
+			<div class="promo"><h5>Tekst tekst</h5></div>
+			<div class="promo"><h5>Tekst tekst</h5></div>
+			<div class="promo"><h5>Tekst tekst</h5></div>
+	</section>
 	<hr class="mvh-background-color divider">
 	<section class="actor-records-promo row">
 	<?php
@@ -39,9 +58,11 @@
 		endwhile;
 
 		// JUST A TEST OF CARD DESIGN
-		the_card();
 	?>
+		<div class="slider">
+			<div id="slider-1"><?php the_card() ?></div>
+		</div>
+		
 	</section>
 </main>
-
 <?php get_footer(); ?>

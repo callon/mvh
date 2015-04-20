@@ -175,6 +175,47 @@ div.right {
 }
 
 
+
+/**********************************\
+			 Promoboxes
+\**********************************/
+.earlier-projects-promo {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.earlier-projects-promo h4 {
+	margin-top: 2rem;
+}
+
+.earlier-projects-promo .row {
+	margin-left: -2rem;
+	margin-right: 0;
+}
+
+.earlier-projects-promo .promo {
+	height: 50px;
+	width: 33.3333%;
+	padding-left: 2rem;
+	overflow: hidden;
+	float: left;
+}
+
+.promo h5 {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.4rem;
+}
+
+.promo-content {
+	height: 100%;
+	width: 100%;
+
+	background-size: cover;
+}
+
+
+
 /**********************************\
 			Footer Styles
 \**********************************/
@@ -192,11 +233,13 @@ footer.footer div.row {
 
 .business-card {
 	margin-top: 35px;
+	min-width: 390px;
 }
 
 .card-info {
 	margin: 0;
 }
+
 
 
 
@@ -208,5 +251,5 @@ footer.footer div.row {
 }
 
 .border-helper {
-	border: solid 1px #E0E0E0;
+	border: solid 1px #9B9B9B;
 }

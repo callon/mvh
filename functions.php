@@ -1,6 +1,7 @@
 <?php
 	add_theme_support( 'post-thumbnails' ); 
 	add_image_size('headshot', 150,150, true);
+	set_post_thumbnail_size( 500,500 );
 
 	// 404 function to link to the 404.php file later.
 	function post_404(){

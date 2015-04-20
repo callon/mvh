@@ -106,8 +106,12 @@
 			}
 			svg_inline();
 
-
-				
+//--------------------- PROMOBOX HEIGHT SCRIPT ---------------------//
+			var promobox_height = function() {
+				$box = $(".promobox");
+				$box.height($box.width());
+			}
+			promobox_height();
 	  
 //--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/
@@ -118,6 +122,7 @@
 
 			// RESIZE SCRIPTS //
 			$( window ).resize(function() {
+				promobox_height();
 			});
 
 			// RESIZE SCRIPTS //
