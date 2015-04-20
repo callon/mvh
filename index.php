@@ -2,7 +2,7 @@
 
 <main class="container">
 	<section class="last-project-promo"><?php 
-		get_segment_project("get_last_post_type", "mvh");
+		$last_post_type = get_segment_project("get_last_post_type", "mvh");
 	 ?>
 	</section>	
 	<hr class="mvh-background-color divider">
@@ -27,28 +27,30 @@
 	<section class="earlier-projects-promo">
 		<h4>Tidligere projekter</h4>
 <?php
-	// FÅ FASTSAT OG HENTET RESTEN I PHP - BRUG VARIABLER TIL AT GIVE SHIT FRA FØRSTE QUERY VIDERE TIL TITLERNE!
-	
-	$last_mvh = get_last_post_type("mvh");
-	while ( $last_mvh->have_posts() ) : $last_mvh->the_post();
-		$mvh_id = get_the_ID();
-	endwhile;
+		// The first box	
+		$params = array( 'post_type' =>   array( 'mvh' ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC', "offset" => 1 );	
+		$first_box = new WP_Query($params);
+		while ( $first_box->have_posts() ) : $first_box->the_post();
+			$first_id = get_the_ID();
+		endwhile;
 
-	$last_dkb = get_last_post_type("dkb");
-	while ( $last_dkb->have_posts() ) : $last_dkb->the_post();
-		$dkb_id = get_the_ID();
-	endwhile;
+		// The second box
+		$second_box = get_last_post_type("dkb");
+		while ( $second_box->have_posts() ) : $second_box->the_post();
+			$second_id = get_the_ID();
+		endwhile;
+
 	
  ?>
 		<div class="row">
-			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php the_project_img_url($last_mvh); ?>);"></div>
+			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php the_project_img_url($first_box); ?>);"></div>
 			</div>
-			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php the_project_img_url($last_dkb); ?>);"></div></div>
+			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php the_project_img_url($second_box); ?>);"></div></div>
 			<div class="promobox promo"><div class="promo-content border-helper">TEKST TESTKSKST</div></div>
 		</div>
 		<div class="row">
-			<div class="promo"><a href="<?php echo get_permalink($mvh_id) ?>"><h5><?php echo get_the_title($mvh_id); ?></h5></a></div>
-			<div class="promo"><a href="<?php echo get_permalink($dkb_id) ?>"><h5><?php echo get_the_title($dkb_id) ?></h5></a></div>
+			<div class="promo"><a href="<?php echo get_permalink($first_id) ?>"><h5><?php echo get_the_title($first_id); ?></h5></a></div>
+			<div class="promo"><a href="<?php echo get_permalink($second_id) ?>"><h5><?php echo get_the_title($second_id) ?></h5></a></div>
 			<div class="promo"><h5>Tekst tekst</h5></div>
 	</section>
 	<hr class="mvh-background-color divider">
