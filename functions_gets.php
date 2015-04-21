@@ -63,7 +63,7 @@ function the_card() {
 					echo "<div class='col s3'>Navn:</div><div class='col s9'>".$name."</div>";
 					echo "<div class='col s3'>Job:</div><div class='col s9'>".$job."</div>";
 					echo "<div class='col s3'>Email:</div><div class='col s9'>".$contact."</div>";
-					echo "<div class='dkb-text-color col s12'>Det Kolde Bord #".$projects."</div>";
+					echo "<div class='text-color col s12'>Det Kolde Bord #".$projects."</div>";
 		echo "</div></div></div>";
 	endwhile;
 
@@ -87,9 +87,77 @@ function get_promo_boxes($recruiting = false) {
 
 }
 
-function get_nav($site) { ?>
+function get_look($site) { ?>
+	<style>
+<?php 
+	$args = array( 'post_type' =>   array( 'look' ), 'tag' => 'settings_color_look', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
+	$results = new WP_Query( $args );
+	
+	while ( $results->have_posts() ) : $results->the_post();
+		if($site === "mvh") {
+			$color = get_field("mvh_color");
+			$header_img = get_field("mvh_header_img");
+		} else if ($site === "dkb") {
+			$color = get_field("dkb_color");
+			$header_img = get_field("dkb_header_img");
+		} ?>
+		
+		.text-color { color: <?php echo $color; ?>; }
+		.background-color { background-color: <?php echo $color; ?>; }
+		.border-color { border-color: <?php echo $color; ?>; }
+		.fill-color { fill: <?php echo $color; ?>;}
 
-<?php }
+		nav li a:hover, nav li a:active, li.current_page_item a {color: <?php echo $color; ?>;}
+		a {color: <?php echo $color; ?>;}
+	</style>
+
+	<?php 
+	return $header_img;
+	endwhile; 
+}
+
+function get_nav($site) {
+	$args = array( 'post_type' =>   array( 'look' ), 'tag' => 'settings_color_look', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
+	$results = new WP_Query( $args );
+	$url = home_url();
+	
+	while ( $results->have_posts() ) : $results->the_post();
+		$dkb_logo = get_field("dkb_logo");
+		$mvh_logo = get_field("dkb_logo");
+
+	?>
+	
+			
+
+		<?php
+
+
+		if($site === "mvh") { 
+			echo "<div class='header-logo right-logo'>";
+				echo "<a href='".$url."' class='link-logo'><img class='svg logo' src='".$mvh_logo."'></a>";
+			echo "</div>";
+			echo "<nav class='border-color header-nav'><div class='nav-wrapper'>";
+				echo "<ul><li><a href='".$url."/dkb/'>Det Kolde Bord</a></li></ul>";
+				echo "<div class='navbar-logo right-margin'></div>";
+			echo "</div></nav>";
+		} else if($site === "dkb") {
+			echo "<div class='header-logo left-logo'>";
+				echo "<a href='".$url."/dkb/' class='link-logo'><img class='svg logo' src='".$dkb_logo."'></a>";
+			echo "</div>";
+			echo "<nav class='border-color header-nav'><div class='nav-wrapper'>";
+				echo "<ul class='right'>";
+					echo "<li><a href='".$url."'>Med Venlig Hilsen</a></li>";
+				echo "</ul>";
+				echo "<div class='navbar-logo left-margin'></div>";
+			echo "</div></nav>";
+		}
+		?>
+		
+		     		
+		     
+					
+<?php	endwhile; 	
+} // end of get_nav();
 
 function the_project_img_url($project) {
 	$result = $project;

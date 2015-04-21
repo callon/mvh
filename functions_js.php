@@ -1,6 +1,6 @@
 <?php 
 	/* Function that includes the script below - made to be used as the last function in the footer.php */
-	function jq_scripts() {
+	function jq_scripts($site_type) {
  ?>
 	 <script>
 
@@ -35,6 +35,10 @@
 				}
 		
 			}
+
+		var recolor_logo = function() {	
+			$("svg path").attr("class", "fill-color");
+		}
 
 //--------------------- STICKY NAVIGATION SCRIPT ---------------------//
 			var stickyNavTop = $('nav').offset().top;
@@ -98,7 +102,8 @@
 
 				        // SET THE WIDTH AND HEIGHT OF THE SVG
 				        resize_logo("init"); // THIS IS WHERE WE ENSURE THAT THE SVG IS REAL SIZE WHEN DOC READY
-				      	
+				        recolor_logo();
+			
 				    }, 'xml');
 				  
 				});
@@ -116,9 +121,11 @@
 //--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/
 			$("header").height($(window).height());
-			$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
+	//		$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
 
-
+//--------------------- SITE DEPENDENT MVH/DKB SCRIPT ---------------------//
+	
+			
 
 			// RESIZE SCRIPTS //
 			$( window ).resize(function() {

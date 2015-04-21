@@ -5,7 +5,7 @@
 		$last_post_type = get_segment_project("get_last_post_type", "mvh");
 	 ?>
 	</section>	
-	<hr class="mvh-background-color divider">
+	<hr class="background-color divider">
 	<section class="about-promo">
 	<?php
 		$result = get_segment("mvh_segment2");
@@ -23,7 +23,7 @@
 		endwhile;
 	?>
 	</section>
-	<hr class="mvh-background-color divider">
+	<hr class="background-color divider">
 	<section class="earlier-projects-promo">
 		<h4>Tidligere projekter</h4>
 <?php
@@ -53,7 +53,7 @@
 			<div class="promo"><a href="<?php echo get_permalink($second_id) ?>"><h5><?php echo get_the_title($second_id) ?></h5></a></div>
 			
 	</section>
-	<hr class="mvh-background-color divider">
+	<hr class="background-color divider">
 	<section class="actor-records-promo row">
 	<?php
 		$result = get_segment("mvh_segment4");
@@ -74,4 +74,4 @@
 		
 	</section>
 </main>
-<?php get_footer(); ?>
+<?php get_footer("mvh"); ?>

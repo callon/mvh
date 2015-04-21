@@ -20,7 +20,8 @@ header {
 	min-height: 600px;
 	height: 100%;
 	width: 100%;
-
+	
+	background-color: #EEE;
 	background-size: cover;
 	background-origin: 50% 50%;
 }
@@ -83,13 +84,20 @@ a {
 /* The logo in the header */
 .header-logo {
 	position: absolute;
-	right: 50px;
 	bottom: 50px;
 
 	height: 200px;
 	width: 200px;
 
 	z-index: 100;
+}
+
+.right-logo {
+	right: 50px;
+}
+
+.left-logo {
+	left: 50px;
 }
 
 .navbar-logo {
@@ -148,11 +156,11 @@ nav li a:hover, nav li a:active, li.current_page_item a {
     transition: color 0.1s;	
 }
 
-div.left {
+div.left-margin {
 	margin-left: 100px;
 }
 
-div.right {
+div.right-margin {
 	margin-right: 100px;
 }
 
