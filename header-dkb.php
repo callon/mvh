@@ -45,10 +45,12 @@
 	<nav class="mvh-border-color header-nav">
     	<div class="nav-wrapper">
      		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-<!-- menu -->	<?php wp_nav_menu( array( 'container' => false, "menu_class" => "left side-nav" ) ); ?>
+     		<ul><li><a href="<?php bloginfo('url'); ?>/dkb/">Det Kolde Bord</a></li></ul>
+			<?php wp_page_menu( array( "menu_class" => "left side-nav" ) ); ?>
 			<div class="navbar-logo right"></div>
 		</div>
 	</nav>
 </header>
+
 
 	

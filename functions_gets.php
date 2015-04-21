@@ -87,6 +87,10 @@ function get_promo_boxes($recruiting = false) {
 
 }
 
+function get_nav($site) { ?>
+
+<?php }
+
 function the_project_img_url($project) {
 	$result = $project;
 	while ( $result->have_posts() ) : $result->the_post();
