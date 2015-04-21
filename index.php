@@ -46,12 +46,12 @@
 			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php the_project_img_url($first_box); ?>);"></div>
 			</div>
 			<div class="promobox promo"><div class="promo-content" style="background-image: url(<?php the_project_img_url($second_box); ?>);"></div></div>
-			<div class="promobox promo"><div class="promo-content border-helper">TEKST TESTKSKST</div></div>
+			<div class="promobox promo"><div class="promo-content recruitment border-helper"><h5>Har du lyst til at deltage i Det Kolde Bord?</h5><div class="link"><a href="#">Læs mere her</a></div></div></div>
 		</div>
 		<div class="row">
 			<div class="promo"><a href="<?php echo get_permalink($first_id) ?>"><h5><?php echo get_the_title($first_id); ?></h5></a></div>
 			<div class="promo"><a href="<?php echo get_permalink($second_id) ?>"><h5><?php echo get_the_title($second_id) ?></h5></a></div>
-			<div class="promo"><h5>Tekst tekst</h5></div>
+			
 	</section>
 	<hr class="mvh-background-color divider">
 	<section class="actor-records-promo row">
