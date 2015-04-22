@@ -40,6 +40,7 @@ section {
 }
 
 main.container {
+	margin-bottom: 130px;
 }
 
 main:before {
@@ -181,6 +182,10 @@ div.right-margin {
 	right: 0;
 }
 
+.slider {
+	height: inherit;
+	margin-bottom: 50px;
+}
 
 
 /**********************************\

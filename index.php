@@ -24,7 +24,8 @@
 	?>
 	</section>
 	<hr class="background-color divider">
-	<section class="recruitment-promo row">
+	<section class="recruitment-promo">
+		<div class="row">
 		<?php
 			$result = get_segment("dkb_segment3");
 			while ( $result->have_posts() ) : $result->the_post();
@@ -35,6 +36,7 @@
 			echo "</div>";
 			endwhile;
 	?>
+		</div>
 	</section>
 	<hr class="background-color divider">
 	<section class="older-project-promo">
