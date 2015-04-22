@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main class="container">
-	SINGLE.PHP
+<main id="top" class="container">
+	
 </main>
 
 <?php get_footer(); ?>

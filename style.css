@@ -48,7 +48,6 @@ main:before {
 
 footer.footer {
 	min-height: 65px;
-	margin-top: 140px;
 }
 
 
@@ -193,7 +192,7 @@ div.right-margin {
 }
 
 .earlier-projects-promo h4 {
-	margin-top: 2rem;
+	margin-top: 1.4rem;
 }
 
 .earlier-projects-promo .row {

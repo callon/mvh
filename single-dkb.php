@@ -1,7 +1,7 @@
-<?php get_header(); ?>
+<?php get_header("dkb"); ?>
 
 <?php while (have_posts()) : the_post(); ?>
-	<main class="container">
+	<main id="top" class="container">
 		<article id="content" class="row">
 			<div class="headline col s12"><h1><?php the_title(); ?></h1></div>
 <?php	if ( has_post_thumbnail() ) { 
@@ -16,5 +16,5 @@
 	</main>
 <?php endwhile; ?>
 
-<?php get_footer(); ?>
+<?php get_footer("dkb"); ?>
 

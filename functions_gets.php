@@ -134,17 +134,19 @@ function get_nav($site) {
 
 		if($site === "mvh") { 
 			echo "<div class='header-logo right-logo'>";
-				echo "<a href='".$url."' class='link-logo'><img class='svg logo' src='".$mvh_logo."'></a>";
+				echo "<a href='".$url."' class='right link-logo'><img class='svg logo' src='".$mvh_logo."'></a>";
 			echo "</div>";
-			echo "<nav class='border-color header-nav'><div class='nav-wrapper'>";
-				echo "<ul><li><a href='".$url."/dkb/'>Det Kolde Bord</a></li></ul>";
+			echo "<nav class='border-color header-nav'><div class='left-margin nav-wrapper'>";
+				echo "<ul class='left'>";
+					echo "<li><a href='".$url."/dkb/'>Det Kolde Bord</a></li>";
+				echo "</ul>";
 				echo "<div class='navbar-logo right-margin'></div>";
 			echo "</div></nav>";
 		} else if($site === "dkb") {
 			echo "<div class='header-logo left-logo'>";
-				echo "<a href='".$url."/dkb/' class='link-logo'><img class='svg logo' src='".$dkb_logo."'></a>";
+				echo "<a href='".$url."/dkb/' class='left link-logo'><img class='svg logo' src='".$dkb_logo."'></a>";
 			echo "</div>";
-			echo "<nav class='border-color header-nav'><div class='nav-wrapper'>";
+			echo "<nav class='border-color header-nav'><div class='right-margin nav-wrapper'>";
 				echo "<ul class='right'>";
 					echo "<li><a href='".$url."'>Med Venlig Hilsen</a></li>";
 				echo "</ul>";

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php while (have_posts()) : the_post(); ?>
-	<main class="container">
+	<main id="top" class="container">
 		<article id="content" class="row">
 			<div class="headline col s12"><h1><?php the_title(); ?></h1></div>
 			<div class="text-content col s12 m7"><?php the_content(); ?></div>

@@ -130,6 +130,7 @@
 			// RESIZE SCRIPTS //
 			$( window ).resize(function() {
 				promobox_height();
+				stickyNav();
 			});
 
 			// RESIZE SCRIPTS //
