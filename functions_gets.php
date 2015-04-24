@@ -120,6 +120,7 @@ function get_nav($site) {
 	$args = array( 'post_type' =>   array( 'look' ), 'tag' => 'settings_color_look', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC' );
 	$results = new WP_Query( $args );
 	$url = home_url();
+	$logo = get_template_directory_uri()."/img_temp/black_logo.svg";
 	
 	while ( $results->have_posts() ) : $results->the_post();
 		$dkb_logo = get_field("dkb_logo");
@@ -134,7 +135,7 @@ function get_nav($site) {
 
 		if($site === "mvh") { 
 			echo "<div class='header-logo right-logo'>";
-				echo "<a href='".$url."' class='right link-logo'><img class='svg logo' src='".$mvh_logo."'></a>";
+				echo "<a href='".$url."' class='right link-logo'><img class='svg logo' src=".$logo."></a>";
 			echo "</div>";
 			echo "<nav class='border-color header-nav'><div class='left-margin nav-wrapper'>";
 				echo "<ul class='left'>";
@@ -155,7 +156,7 @@ function get_nav($site) {
 
 		} else if($site === "dkb") {
 			echo "<div class='header-logo left-logo'>";
-				echo "<a href='".$url."/dkb/' class='left link-logo'><img class='svg logo' src='".$dkb_logo."'></a>";
+				echo "<a href='".$url."/dkb/' class='left link-logo'><img class='svg logo' src=".$logo."></a>";
 			echo "</div>";
 			echo "<nav class='border-color header-nav'><div class='right-margin nav-wrapper'>";
 				echo "<ul class='right'>";
