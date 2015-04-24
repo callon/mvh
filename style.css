@@ -27,11 +27,12 @@ header {
 }
 
 nav {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0);
 	box-shadow: none;
 
 	bottom: 10%;
 	position: absolute;
+	overflow: visible;
 }
 
 section {
@@ -167,15 +168,17 @@ div.right-margin {
 
 /* Dropdown styles */
 #dropper {
-	display: block;
+	display: inline-block;
 	opacity: 1;
 	text-align: center;
-	margin-bottom: 64px;
-	bottom: 10%;
+}
+
+#dropper li {
+	float: none;
 }
 
 .drop-trigger {
-	background-color: red;
+/*	background-color: red;  */
 }
 
 .dropdown-content li>a {

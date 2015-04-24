@@ -140,17 +140,19 @@ function get_nav($site) {
 			echo "<nav class='border-color header-nav'><div class='left-margin nav-wrapper'>";
 				echo "<ul class='left'>";
 					echo "<li><a href='".$url."/dkb/'>Det Kolde Bord</a></li>";
-					echo "<li><a href='#' class='drop-trigger' data-activates='dropper'>Projekter</a></li>"; // Dropdown activator
+					echo "<li><a href='#' class='drop-trigger'>Projekter</a>";  // Dropdown activator
+						// DROPDOWN CONTENT
+/*							echo "<ul id='dropper'>";
+								echo "<li><a href='#'>BLBLBLBLa BLb adasdas Projekt</a></li>";
+								echo "<li><a href='#'>Næstsidste</a></li>";
+								echo "<li><a href='#'>Arkiv</a></li>";													
+							echo "</ul>";				*/
+					"</li>"; // Dropdown activator END
 					echo "<li><a href='".$url."'>Om os</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo right-margin'></div>";
 			echo "</div></nav>";
-			// DROPDOWN CONTENT
-				echo "<ul id='dropper' class='dropdown-content'>";
-					echo "<li><a href='#'>BLBLBLBLa BLb adasdas Projekt</a></li>";
-					echo "<li><a href='#'>Næstsidste</a></li>";
-					echo "<li><a href='#'>Arkiv</a></li>";
-				echo "</ul>";
+			
 
 
 
