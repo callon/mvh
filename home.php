@@ -49,8 +49,8 @@
 			<div class="promobox promo"><div class="promo-content recruitment border-helper"><h5>Har du lyst til at deltage i Det Kolde Bord?</h5><div class="link"><a href="#">Læs mere her</a></div></div></div>
 		</div>
 		<div class="row">
-			<div class="promo"><a href="<?php echo get_permalink($first_id) ?>"><h5><?php echo get_the_title($first_id); ?></h5></a></div>
-			<div class="promo"><a href="<?php echo get_permalink($second_id) ?>"><h5><?php echo get_the_title($second_id) ?></h5></a></div>
+			<div class="promo"><a href="<?php echo get_permalink($first_id) ?>#top"><h5><?php echo get_the_title($first_id); ?></h5></a></div>
+			<div class="promo"><a href="<?php echo get_permalink($second_id) ?>#top"><h5><?php echo get_the_title($second_id) ?></h5></a></div>
 			
 	</section>
 	<hr class="background-color divider">
