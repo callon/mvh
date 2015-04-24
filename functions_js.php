@@ -23,12 +23,14 @@
 					console.log("init");
 					var scrollTop = $(window).scrollTop();
 					var stickyNavTop = $("nav").offset().top;
-					if (scrollTop > stickyNavTop) { 
+					if (scrollTop == stickyNavTop) { 
 						resize_logo("small");
 						console.log("SMALL LOGO");
 					} else { 
 						resize_logo("big");
 						console.log("BIG LOGO");
+						console.log(scrollTop);
+						console.log(stickyNavTop);
 					}
 				} else {
 					console.log("resize_logo: None");

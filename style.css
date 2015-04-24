@@ -42,6 +42,7 @@ section {
 
 main.container {
 	margin-bottom: 130px;
+	width: 60%;
 }
 
 main:before {

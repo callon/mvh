@@ -23,7 +23,7 @@ function get_segment_project($get_function, $type){
 	the_excerpt();
 	echo "</div>";
 	
-	echo "<div class='readmore-link center-align col s3'><a href=".get_permalink().">Læs mere her</a></div>";
+	echo "<div class='readmore-link center-align col s3'><a href=".get_permalink()."#top>Læs mere her</a></div>";
 	endwhile;
 }
 
