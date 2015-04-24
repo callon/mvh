@@ -124,8 +124,11 @@
 	//		$("header").css("background-image", "url(<?php bloginfo('template_url'); ?>/img_temp/header_mvh.jpg)")
 
 //--------------------- SITE DEPENDENT MVH/DKB SCRIPT ---------------------//
-	
 			
+
+//--------------------- DROPDOWN SCRIPT ---------------------//	
+			// Dropper moves to the left ( the difference in width between dropper and trigger )	
+
 
 			// RESIZE SCRIPTS //
 			$( window ).resize(function() {

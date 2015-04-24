@@ -27,7 +27,7 @@ header {
 }
 
 nav {
-	background-color: rgba(255, 255, 255, 0);
+	background-color: rgba(255, 255, 255, 0.5);
 	box-shadow: none;
 
 	bottom: 10%;
@@ -156,6 +156,7 @@ nav li a:hover, nav li a:active, li.current_page_item a {
     transition: color 0.1s;	
 }
 
+/* Margin for the navigation items */
 div.left-margin {
 	margin-left: 100px;
 }
@@ -163,6 +164,24 @@ div.left-margin {
 div.right-margin {
 	margin-right: 100px;
 }
+
+/* Dropdown styles */
+#dropper {
+	display: block;
+	opacity: 1;
+	text-align: center;
+	margin-bottom: 64px;
+	bottom: 10%;
+}
+
+.drop-trigger {
+	background-color: red;
+}
+
+.dropdown-content li>a {
+	font-size: 1rem;
+}
+
 
 
 /**********************************\

@@ -139,9 +139,20 @@ function get_nav($site) {
 			echo "<nav class='border-color header-nav'><div class='left-margin nav-wrapper'>";
 				echo "<ul class='left'>";
 					echo "<li><a href='".$url."/dkb/'>Det Kolde Bord</a></li>";
+					echo "<li><a href='#' class='drop-trigger' data-activates='dropper'>Projekter</a></li>"; // Dropdown activator
+					echo "<li><a href='".$url."'>Om os</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo right-margin'></div>";
 			echo "</div></nav>";
+			// DROPDOWN CONTENT
+				echo "<ul id='dropper' class='dropdown-content'>";
+					echo "<li><a href='#'>BLBLBLBLa BLb adasdas Projekt</a></li>";
+					echo "<li><a href='#'>Næstsidste</a></li>";
+					echo "<li><a href='#'>Arkiv</a></li>";
+				echo "</ul>";
+
+
+
 		} else if($site === "dkb") {
 			echo "<div class='header-logo left-logo'>";
 				echo "<a href='".$url."/dkb/' class='left link-logo'><img class='svg logo' src='".$dkb_logo."'></a>";
