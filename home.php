@@ -51,7 +51,7 @@
 		<div class="row">
 			<div class="promo"><a href="<?php echo get_permalink($first_id) ?>#top"><h5><?php echo get_the_title($first_id); ?></h5></a></div>
 			<div class="promo"><a href="<?php echo get_permalink($second_id) ?>#top"><h5><?php echo get_the_title($second_id) ?></h5></a></div>
-			
+		</div>
 	</section>
 	<hr class="background-color divider">
 	<section class="actor-records-promo row">

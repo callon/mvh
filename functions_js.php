@@ -119,6 +119,21 @@
 				$box.height($box.width());
 			}
 			promobox_height();
+
+
+//--------------------- GALLERY SCRIPT ---------------------//
+		$('.gallery-item').magnificPopup({
+				type: 'image', 
+				gallery:{
+					enabled:true
+				},
+				zoom: {
+				    enabled: true,
+				    duration: 400, // duration of the effect, in milliseconds
+				    easing: 'ease-in-out', // CSS transition easing function
+			    }
+		});
+
 	  
 //--------------------- HEADER FULLSCREEN SCRIPT ---------------------//	  
 			/*Sets the header (hero image) to fullscreen size*/ /*Sets the background image for the header (hero)*/

@@ -7,9 +7,13 @@
 	<meta name="author" content="">
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/materialize.min.css">
-	<link rel="stylesheet" href=<?php bloginfo('stylesheet_url'); ?>>
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/magnific-popup.css">
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/materialize.min.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/magnific-popup.min.js"></script>
+	
+	<link rel="stylesheet" href=<?php bloginfo('stylesheet_url'); ?>>
 	<?php 
 		$header_img = get_look("mvh"); 
 	?>
@@ -22,6 +26,7 @@
 <header style="background-image: url(<?php echo $header_img; ?>);">
 	<!-- navbar placeholder - Work In Progress -->
 	<?php get_nav("mvh") ?>
+	
 </header>
-
+<?php get_page_by_title("archive_mvh"); ?>
 	

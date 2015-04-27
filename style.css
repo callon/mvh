@@ -262,6 +262,35 @@ div.right-margin {
 }
 
 
+/**********************************\
+			Gallery Styles
+\**********************************/
+.gallery {
+	margin-top: 10px;
+	margin-bottom: 23px;
+}
+
+.gallery h4 {
+	margin-top: 1.4rem;
+}
+
+.gallery .row {
+	margin-left: -2rem;
+	margin-right: 0;
+}
+
+.gallery .gallery-box {
+	height: 50px;
+	width: 33.3333%;
+	padding-left: 2rem;
+	overflow: hidden;
+	float: left;
+}
+
+.gallery-item, .gallery-item img {
+	backface-visibility: hidden;
+	width: 100%;
+}
 
 /**********************************\
 			Footer Styles
@@ -288,8 +317,6 @@ footer.footer div.row {
 }
 
 
-
-
 /**********************************\
 			HELPERS
 \**********************************/
@@ -299,4 +326,8 @@ footer.footer div.row {
 
 .border-helper {
 	border: solid 1px #9B9B9B;
+}
+
+.display-none {
+	display: none;
 }

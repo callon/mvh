@@ -13,7 +13,21 @@
 					<?php the_facts(); ?>
 				</div>
 		</article>
+		<section id="galleri" class="gallery-section">
+			<?php 
+				the_gallery(); 
+			?>
+		</section>
+		<section class="press">
+			<?php 
+				if(get_field("press")) {
+					echo "<h4>Presse</h4>";
+					the_field("press"); 
+				}
+			?>
+		</section>
 	</main>
 <?php endwhile; ?>
+<?php 
 
-<?php get_footer("mvh"); ?>
+get_footer("mvh"); ?>

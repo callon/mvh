@@ -38,6 +38,7 @@ function the_facts() {
 	the_field("facts_headline");
 	echo "</h5>";
 	the_field("facts");
+	the_sponsors();
 }
 
 
@@ -125,7 +126,6 @@ function get_nav($site) {
 	while ( $results->have_posts() ) : $results->the_post();
 		$dkb_logo = get_field("dkb_logo");
 		$mvh_logo = get_field("dkb_logo");
-
 	?>
 	
 			
@@ -186,4 +186,53 @@ function the_project_img_url($project) {
 	endwhile;
 }
 
+
+function the_gallery() {
+	$imgs = get_field("gallery");
+	
+	if($imgs) {
+		$i = 0;
+		echo "<hr class='divider background-color'>";
+		echo "<h4>Galleri</h4>";
+		echo "<div class='gallery row'>";
+		foreach($imgs as $img) {
+			$url = $img['url'];
+
+			if($i < 3) {
+				$class = "gallery-item";
+			} else {
+				$class = "gallery-item display-none";
+			}
+			echo "<div class='col s4'>";
+				echo "<a class='".$class."' title='".$img['title']."' href='".$url."'>";
+						echo "<img src=".$img['sizes']['gallery'].">";
+				echo "</a>";
+			echo "</div>";
+			$i++;
+		}
+
+		echo "</div>";
+		echo "<hr class='divider background-color'>";
+	}
+	
+}
+
+function the_sponsors() {
+	$imgs = get_field("sponsors");
+	
+	if($imgs) {
+		echo "<div class='section row'>";
+		echo "<h5>Støttet af:</h5>";
+		foreach($imgs as $img) {
+			$url = $img['url'];
+			echo "<div class='col s12'>";
+				echo "<img class='responsive-img' src='".$url."'>";
+			echo "</div>";			
+		}
+		echo "</div>";
+	}
+}
+
+
 ?>
+
