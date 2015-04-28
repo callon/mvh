@@ -148,6 +148,8 @@ function get_look($site) { ?>
 	<?php 
 	return $header_img;
 	endwhile; 
+
+
 }
 
 function get_nav($site) {
