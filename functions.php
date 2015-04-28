@@ -17,6 +17,8 @@
 	    $wp_rewrite->set_permalink_structure( '/%postname%/' );
 	}
 
+
+
 	// allow svg upload in wordpress
 	function custom_mtypes( $m ){
 	    $m['svg'] = 'image/svg+xml';

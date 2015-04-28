@@ -28,5 +28,3 @@
 	<?php get_nav("mvh") ?>
 	
 </header>
-<?php get_page_by_title("archive_mvh"); ?>
-	

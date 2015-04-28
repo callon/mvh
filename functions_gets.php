@@ -71,7 +71,40 @@ function the_card() {
 }
 
 function get_all_cards() {
+	$args = array('post_type' => 'card');
+	$card = new WP_Query( $args );
+	$i = 1;
 
+	while ( $card->have_posts() ) : $card->the_post();
+		$name = get_field("card_name");
+		$job = get_field("job");
+		$contact = get_field("contact");
+		$projects = get_field("projects");
+
+		$headshot_img = get_field("headshot_image");
+		$img_arr = wp_get_attachment_image_src( $headshot_img, 'headshot' );
+
+
+		if ($i%2 == 1) {  
+	         echo "<div class='row'>";
+	    }
+		
+			echo "<div class='business-card col s12 m6 valign-wrapper'>";
+				echo "<div class='no-line-height col s4'><img class='circle headshot responsive-img' src=".$img_arr[0]."></div>";
+				echo "<div class='card-info valign row col s8'>";
+					echo "<div class='col s3'>Navn:</div><div class='col s9'>".$name."</div>";
+					echo "<div class='col s3'>Job:</div><div class='col s9'>".$job."</div>";
+					echo "<div class='col s3'>Email:</div><div class='col s9'>".$contact."</div>";
+					echo "<div class='text-color col s12'>Det Kolde Bord #".$projects."</div>";
+		echo "</div></div>";
+
+		if ($i%2 == 0) {
+	        echo "</div>";
+	    }
+	    $i++;
+
+	endwhile;
+	if ($i%2 != 1) echo "</div>";
 }
 
 function get_card_from() {
@@ -148,6 +181,7 @@ function get_nav($site) {
 								echo "<li><a href='#'>Arkiv</a></li>";													
 							echo "</ul>";				*/
 					"</li>"; // Dropdown activator END
+					echo "<li><a href='".get_permalink( get_page_by_title( 'mvh_arkiv' ) )."'>Arkiv</a></li>";
 					echo "<li><a href='".$url."'>Om os</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo right-margin'></div>";
@@ -163,6 +197,7 @@ function get_nav($site) {
 			echo "<nav class='border-color header-nav'><div class='right-margin nav-wrapper'>";
 				echo "<ul class='right'>";
 					echo "<li><a href='".$url."'>Med Venlig Hilsen</a></li>";
+					echo "<li><a href='".get_permalink( get_page_by_title( 'dkb_arkiv' ) )."'>Arkiv</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo left-margin'></div>";
 			echo "</div></nav>";

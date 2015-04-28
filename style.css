@@ -79,6 +79,10 @@ a {
 	background-color: #639CA7;
 }
 
+article#content img.wp-post-image {
+	margin-bottom: 10px;
+}
+
 
 /**********************************\
 			Header Styles
@@ -301,7 +305,7 @@ footer.footer div.row {
 }
 
 /**********************************\
-		Card Inded Styles
+		Card Index Styles
 \**********************************/
 .headshot {
 	border: solid 1px #E0E0E0;
@@ -309,12 +313,32 @@ footer.footer div.row {
 
 .business-card {
 	margin-top: 35px;
-	min-width: 390px;
+	font-size: 15px;
 }
 
 .card-info {
 	margin: 0;
 }
+
+
+/**********************************\
+		Archive Styles
+\**********************************/
+.pagination .page-numbers {
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-top: 40px;
+}
+
+main.archive {
+	margin-bottom: 50px;
+}
+
+section.archive {
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
 
 
 /**********************************\
