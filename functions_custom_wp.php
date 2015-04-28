@@ -97,7 +97,7 @@
 			'hierarchical' => false,
 			'menu_position' => null,
 			'taxonomies' => array('post_tag'), 
-			'supports' => array( 'editor' )
+			'supports' => array( 'title', 'editor' )
 		); 
 		register_post_type('look', $look_args);	
 

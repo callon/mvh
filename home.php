@@ -1,5 +1,4 @@
 <?php get_header("mvh"); ?>
-
 <main class="container">
 	<section class="last-project-promo"><?php 
 		$last_post_type = get_segment_project("get_last_post_type", "mvh");
