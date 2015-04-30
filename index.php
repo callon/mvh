@@ -74,9 +74,7 @@
 
 		// JUST A TEST OF CARD DESIGN
 	?>
-		<div class="slider">
-			<div id="slider-1"><?php the_card() ?></div>
-		</div>
+		<?php the_slider(); ?>
 		
 	</section>
 </main>

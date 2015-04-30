@@ -1,7 +1,9 @@
 <?php get_header("dkb"); ?>
-	<main class="container">
+	<main class="container" id="kartotek" name="kartotek">
 		<section class='card-index-searches'></section>
-		<?php get_all_cards(); ?>
-		<?php get_new_card(); ?>
+		<div class="row">
+		<?php the_card(); ?>
+		<?php the_card(); ?>
+		</div>
 	</main>
 <?php get_footer("dkb"); ?>

@@ -40,9 +40,11 @@ section {
 	margin-bottom: 115px;
 }
 
-main.container {
-	margin-bottom: 130px;
-	width: 60%;
+@media screen and (min-width: 993px)  {
+	.container {
+		margin-bottom: 130px;
+		width: 65%;
+	}
 }
 
 main:before {
@@ -51,6 +53,7 @@ main:before {
 
 footer.footer {
 	min-height: 65px;
+	margin-bottom: 0;
 }
 
 
@@ -309,15 +312,66 @@ footer.footer div.row {
 \**********************************/
 .headshot {
 	border: solid 1px #E0E0E0;
+	width: 90px;
+	height: 90px;
 }
 
 .business-card {
 	margin-top: 35px;
 	font-size: 15px;
+	max-width: 390px;
+	width: 100%;
+	position: relative;
 }
 
 .card-info {
 	margin: 0;
+	height: 100%;
+}
+
+.card-info ul {
+	margin: 0 0 0 15px;
+}
+
+.card-info li {
+	display: inline-block;
+	min-width: 56px;
+	word-break: break-all;
+}
+
+/* Special Media Query for the small screen version of the business-cards / card-index */
+@media screen and (max-width: 992px) and (min-width: 491px)  {
+	.business-card {
+		width: 380px;
+		left: 50%;
+		margin-left: -160px;
+	}
+}
+@media screen and (max-width: 490px)  {
+	.business-card {
+		width: 340px;
+	}
+	.card-info ul {
+		margin: 0 0 0 10px;
+	}
+	.card-info li {
+		min-width: 50px;
+	}
+}
+@media screen and (max-width: 432px)  {
+	.business-card {
+		display: block;
+		width: 100%;
+	}
+	.card-info {
+		max-width: 250px;
+	}
+	.headshot {
+		left: 50%;
+		position: relative;
+		margin-left: -45px;
+		margin-bottom: 17px;
+	}
 }
 
 
@@ -337,6 +391,14 @@ main.archive {
 section.archive {
 	margin-top: 70px;
 	margin-bottom: 70px;
+}
+
+
+/**********************************\
+		Single Styles
+\**********************************/
+div.sponsor {
+	padding: 0;
 }
 
 

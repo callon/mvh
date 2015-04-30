@@ -43,7 +43,7 @@ function the_facts() {
 
 
 
-function the_card() {
+function the_card($col_class = ""){
 	$args = array('post_type' => 'card', 'posts_per_page' => 1);
 	$card = new WP_Query( $args );
 
@@ -56,18 +56,24 @@ function the_card() {
 		$headshot_img = get_field("headshot_image");
 		$img_arr = wp_get_attachment_image_src( $headshot_img, 'headshot' );
 
-		
-		echo "<div class='row'>";
-			echo "<div class='business-card col s6 offset-s3 valign-wrapper'>";
-				echo "<div class='no-line-height col s4'><img class='circle headshot responsive-img' src=".$img_arr[0]."></div>";
-				echo "<div class='card-info valign row col s8'>";
-					echo "<div class='col s3'>Navn:</div><div class='col s9'>".$name."</div>";
-					echo "<div class='col s3'>Job:</div><div class='col s9'>".$job."</div>";
-					echo "<div class='col s3'>Email:</div><div class='col s9'>".$contact."</div>";
-					echo "<div class='text-color col s12'>Det Kolde Bord #".$projects."</div>";
+			echo "<div class='card-wrap col s12 l6 ".$col_class."'>";
+			echo "<div class='business-card valign-wrapper'>";
+				echo "<div class='no-line-height'><img class='circle headshot' src=".$img_arr[0]."></div>";
+				echo "<div class='card-info valign'>";
+					echo "<ul><li>Navn:</li><li>".$name."</li></ul>";
+					echo "<ul><li>Job:</li><li>".$job."</li></ul>";
+					echo "<ul><li>Email:</li><li>".$contact."</li></ul>";
+					echo "<ul><li class='text-color'>Det Kolde Bord #".$projects."</li></ul>";
 		echo "</div></div></div>";
 	endwhile;
+}
 
+function the_slider() {
+	echo "<div class='slider'>";
+			echo "<div id='slide-1' class='row'>";
+				the_card("offset-l3");
+			echo "</div>";
+	echo "</div>";
 }
 
 function get_all_cards() {
@@ -173,22 +179,15 @@ function get_nav($site) {
 			echo "<nav class='border-color header-nav'><div class='left-margin nav-wrapper'>";
 				echo "<ul class='left'>";
 					echo "<li><a href='".$url."/dkb/'>Det Kolde Bord</a></li>";
-					echo "<li><a href='#' class='drop-trigger'>Projekter</a>";  // Dropdown activator
-						// DROPDOWN CONTENT
-/*							echo "<ul id='dropper'>";
-								echo "<li><a href='#'>BLBLBLBLa BLb adasdas Projekt</a></li>";
-								echo "<li><a href='#'>Næstsidste</a></li>";
-								echo "<li><a href='#'>Arkiv</a></li>";													
-							echo "</ul>";				*/
-					"</li>"; // Dropdown activator END
+					echo "<li><a href='#'>Projekter</a>";
 					echo "<li><a href='".get_permalink( get_page_by_title( 'mvh_arkiv' ) )."'>Arkiv</a></li>";
+					echo "<li><a href='#'>Projekt 1</a>";
+					echo "<li><a href='#'>Projekt 2</a>";
 					echo "<li><a href='".$url."'>Om os</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo right-margin'></div>";
 			echo "</div></nav>";
 			
-
-
 
 		} else if($site === "dkb") {
 			echo "<div class='header-logo left-logo'>";
@@ -198,6 +197,8 @@ function get_nav($site) {
 				echo "<ul class='right'>";
 					echo "<li><a href='".$url."'>Med Venlig Hilsen</a></li>";
 					echo "<li><a href='".get_permalink( get_page_by_title( 'dkb_arkiv' ) )."'>Arkiv</a></li>";
+					echo "<li><a href='".$url."/kartotek/#kartotek'>Kartotek</a></li>";
+					echo "<li><a href='".$url."'>Om Det Kolde Bord</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo left-margin'></div>";
 			echo "</div></nav>";
@@ -260,7 +261,7 @@ function the_sponsors() {
 		echo "<h5>Støttet af:</h5>";
 		foreach($imgs as $img) {
 			$url = $img['url'];
-			echo "<div class='col s12'>";
+			echo "<div class='sponsor col s8 offset-s4'>";
 				echo "<img class='responsive-img' src='".$url."'>";
 			echo "</div>";			
 		}
