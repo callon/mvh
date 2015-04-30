@@ -175,23 +175,6 @@ div.right-margin {
 }
 
 /* Dropdown styles */
-#dropper {
-	display: inline-block;
-	opacity: 1;
-	text-align: center;
-}
-
-#dropper li {
-	float: none;
-}
-
-.drop-trigger {
-/*	background-color: red;  */
-}
-
-.dropdown-content li>a {
-	font-size: 1rem;
-}
 
 
 
@@ -416,4 +399,22 @@ section.archive {
 
 .display-none {
 	display: none;
+}
+
+
+
+
+/*************************************/
+.dropdown-content {
+	max-height: none;
+}
+.dropdown-content li {
+	float: none;
+	text-align: center;
+}
+
+.dropdown-button {
+line-height: inherit;
+padding: 0 15px;
+height: auto;
 }

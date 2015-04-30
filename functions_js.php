@@ -144,24 +144,6 @@
 			
 
 //--------------------- DROPDOWN SCRIPT ---------------------//	
-			// Dropper moves to the left ( the difference in width between dropper and trigger )	
-/*			var trig_left = $(".drop-trigger").offset().left;
-			var trig_width = $(".drop-trigger").innerWidth();
-			var content_width = $("#dropper").innerWidth();
-			var new_left = trig_left - ((content_width-trig_width)/2)
-
-			// Dropper top
-
-			var a = $(".drop-trigger").offset().top;
-			var b = $("#dropper").height();
-
-			var c = a-b;
-			console.log(c);
-
-			$("#dropper").css({"left" : new_left, "top" : c});
-
-			*/
-
 			
 
 

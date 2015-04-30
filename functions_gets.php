@@ -44,8 +44,9 @@ function the_facts() {
 
 
 function the_card($col_class = ""){
-	$args = array('post_type' => 'card', 'posts_per_page' => 1);
-	$card = new WP_Query( $args );
+	
+		$args = array('post_type' => 'card', 'posts_per_page' => 1);
+		$card = new WP_Query( $args );
 
 	while ( $card->have_posts() ) : $card->the_post();
 		$name = get_field("card_name");
@@ -114,7 +115,30 @@ function get_all_cards() {
 }
 
 function get_card_from() {
+/*	$q1 = get_posts(array(
+			'post_type' => 'card',
+			's' => $search
+		));
+	$q2 = get_posts(array(
+			'post_type' => 'card',
+			'meta_query'	=> array(
+				'relation'		=> 'OR',
+				array(
+					'key'		=> 'card_name',
+					'value'		=> $search,
+					'compare'	=> '='
+				),
+				array(
+					'key'		=> 'attendees',
+					'value'		=> 100,
+					'type'		=> 'NUMERIC',
+					'compare'	=> '>'
+				)
+			)
+		)
+	);
 
+	the_card($card);	*/
 }
 
 
@@ -172,22 +196,29 @@ function get_nav($site) {
 		<?php
 
 
-		if($site === "mvh") { 
+		if($site === "mvh") {
 			echo "<div class='header-logo right-logo'>";
 				echo "<a href='".$url."' class='right link-logo'><img class='svg logo' src=".$logo."></a>";
 			echo "</div>";
+			
+
+
+
 			echo "<nav class='border-color header-nav'><div class='left-margin nav-wrapper'>";
 				echo "<ul class='left'>";
 					echo "<li><a href='".$url."/dkb/'>Det Kolde Bord</a></li>";
-					echo "<li><a href='#'>Projekter</a>";
-					echo "<li><a href='".get_permalink( get_page_by_title( 'mvh_arkiv' ) )."'>Arkiv</a></li>";
-					echo "<li><a href='#'>Projekt 1</a>";
-					echo "<li><a href='#'>Projekt 2</a>";
 					echo "<li><a href='".$url."'>Om os</a></li>";
+					echo "<li><a class='dropdown-button' href='#' data-beloworigin='true' data-dropup='true' data-hover='true' data-activates='dropdown1'>Drop Me!</a></li>";
 				echo "</ul>";
 				echo "<div class='navbar-logo right-margin'></div>";
 			echo "</div></nav>";
 			
+			echo "<ul id='dropdown1' class='dropdown-content'>";
+				echo "<li><a href='#!'>one</a></li>";
+				echo "<li><a href='#!'>two</a></li>";
+				echo "<li class='divider'></li>";
+				echo "<li><a href='#!'>three</a></li>";
+			echo "</ul>";
 
 		} else if($site === "dkb") {
 			echo "<div class='header-logo left-logo'>";

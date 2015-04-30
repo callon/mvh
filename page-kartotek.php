@@ -4,6 +4,7 @@
 		<div class="row">
 		<?php the_card(); ?>
 		<?php the_card(); ?>
+		<?php get_card_from(); ?>
 		</div>
 	</main>
 <?php get_footer("dkb"); ?>
