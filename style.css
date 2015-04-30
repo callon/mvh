@@ -397,7 +397,7 @@ section.archive {
 /**********************************\
 		Single Styles
 \**********************************/
-div.sponsor {
+.row div.sponsor {
 	padding: 0;
 }
 

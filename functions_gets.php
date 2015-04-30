@@ -261,7 +261,7 @@ function the_sponsors() {
 		echo "<h5>Støttet af:</h5>";
 		foreach($imgs as $img) {
 			$url = $img['url'];
-			echo "<div class='sponsor col s8 offset-s4'>";
+			echo "<div class='sponsor col s8 offset-s4 l6 offset-l6'>";
 				echo "<img class='responsive-img' src='".$url."'>";
 			echo "</div>";			
 		}
